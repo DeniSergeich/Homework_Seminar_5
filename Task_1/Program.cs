@@ -5,7 +5,7 @@ Console.Write("Введите диапазон элементов массива
 string range = Console.ReadLine();
 int[] array = GetArray(numbersOfArray, range);
 Console.WriteLine($"Количество элементов массива лежащих в промежутке от 10 до 99 равно: {Result(array, 10, 99)}");
-PrintArray(array);
+Console.Write($"[{String.Join(", ", array)}]");
 int[] GetArray(int numbersOfArray, string range)
 {
     int[] array = new int[numbersOfArray];    
@@ -26,10 +26,4 @@ int Result(int[] array, int minRange, int maxRange)
         if(el >= minRange && el <= maxRange) count+=1;
     }
     return count;
-}
-void PrintArray(int[] array)
-{
-    for(int i = 0; i < array.Length; i++){
-        Console.Write($"{array[i]} ");
-    }
 }
